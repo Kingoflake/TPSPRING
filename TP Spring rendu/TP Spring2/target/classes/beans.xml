@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="printer" class="com.example.demo.Printer"/>
+    <bean id="helloer" class="com.example.demo.Helloer">
+        <property name="printer" ref="printer"/>
+    </bean>
+    <bean id="spellchecker" class="com.example.demo.Spellchecker"/>
+    <bean id="editor" class="com.example.demo.Editor"/>
+    <bean id="addresbook" class="com.example.demo.AddressBook"/>
+    <bean id="emailer" class="com.example.demo.Emailer">
+        <property name="editor" ref="editor"/>
+        <property name="addressBook" ref="addresbook"/>
+    </bean>
+
+
+
+</beans>
